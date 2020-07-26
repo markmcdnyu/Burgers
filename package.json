@@ -1,7 +1,7 @@
 {
   "name": "Burgers",
   "version": "1.0.0",
-  "description": "Overview",
+  "description": "### Overview",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/markmcdnyu/Burgers/issues"
   },
-  "homepage": "https://github.com/markmcdnyu/Burgers#readme"
+  "homepage": "https://github.com/markmcdnyu/Burgers#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql": "^2.18.1"
+  }
 }
