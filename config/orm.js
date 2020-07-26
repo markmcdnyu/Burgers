@@ -1,11 +1,6 @@
 // Import MySQL connection.
-var connection = require("./connection.js");
+const connection = require("./connection.js");
 
-
-// MVC CAT EXAMPLE FOR var connection below
-// var connection = require("../config/connection.js");
-
-// Helper function for SQL syntax.
 // NEED a function to help by adding in ? into a string for SQL queries 
 
 function printQuestionMarks(num) {
