@@ -1,7 +1,7 @@
 {
   "name": "Burgers",
   "version": "1.0.0",
-  "description": "### Overview",
+  "description": "Overview",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
