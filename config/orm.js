@@ -41,7 +41,56 @@ function objToSql(ob) {
 
 // NEED to add the orm variable that allows for getting all the burgers, updating burgers, and adding burgers
 var orm = {
+  all: function (tableInput, cb) {
+    let queryString = "SELECT * FROM " + tableInput + ";";
+    connection.query(queryString, function (err, result) {
+      if (err) {
+        throw err;
+      }
+      cb(result);
+    });
+  },
+  create: function (table, cols, vals, cb) {
+    let queryString = `INSERT INTO ${table} (${cols.toString()}) VALUES (${printQuestionMarks(vals.length)})`;
 
+
+    connection.query(queryString, vals, function (err, result) {
+      if (err) {
+        throw err;
+      }
+
+      cb(result);
+    });
+  },
+  // An example of objColVals would be {name: panther, sleepy: true}
+  update: function (table, objColVals, condition, cb) {
+    // let queryString = "UPDATE " + table;
+
+    let queryString = `UPDATE ${table} SET ${objToSql(objColVals)} WHERE ${condition}`;
+
+
+    console.log(queryString);
+    connection.query(queryString, function (err, result) {
+      if (err) {
+        throw err;
+      }
+
+      cb(result);
+    });
+  },
+  delete: function (table, condition, cb) {
+    let queryString = "DELETE FROM " + table;
+    queryString += " WHERE ";
+    queryString += condition;
+
+    connection.query(queryString, function (err, result) {
+      if (err) {
+        throw err;
+      }
+
+      cb(result);
+    });
+  }
 };
 
 module.exports = orm;
