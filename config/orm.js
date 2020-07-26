@@ -39,6 +39,12 @@ function objToSql(ob) {
   return arr.toString();
 }
 
+// NEED to add the orm variable that allows for getting all the burgers, updating burgers, and adding burgers
+var orm = {
+
+};
+
+module.exports = orm;
 
 
 /*
