@@ -1,5 +1,5 @@
 // Import MySQL connection.
-const connection = require("./connection.js");
+var connection = require("./connection.js");
 
 // NEED a function to help by adding in ? into a string for SQL queries 
 
